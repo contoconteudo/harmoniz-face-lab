@@ -1,10 +1,13 @@
 import doctorPortrait from "@/assets/doctor-portrait.jpg";
+import { useScrollReveal, revealStyle } from "@/hooks/useScrollReveal";
 
 const AboutSection = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
-    <section className="py-24 md:py-32 px-6 bg-navy-light">
+    <section ref={ref} className="py-24 md:py-32 px-6 bg-navy-light">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-        <div className="relative">
+        <div style={revealStyle(isVisible, 0)} className="relative">
           <img
             src={doctorPortrait}
             alt="Dr. Jonathan Vidal"
@@ -16,12 +19,12 @@ const AboutSection = () => {
         </div>
 
         <div>
-          <p className="text-gold text-sm tracking-widest uppercase mb-3">Quem é</p>
-          <h2 className="font-serif text-3xl md:text-5xl mb-8">
+          <p style={revealStyle(isVisible, 100)} className="text-gold text-sm tracking-widest uppercase mb-3">Quem é</p>
+          <h2 style={revealStyle(isVisible, 150)} className="font-serif text-3xl md:text-5xl mb-8">
             Dr. Jonathan Vidal
           </h2>
 
-          <div className="space-y-4 text-muted-foreground leading-relaxed text-sm md:text-base">
+          <div style={revealStyle(isVisible, 250)} className="space-y-4 text-muted-foreground leading-relaxed text-sm md:text-base">
             <p>
               O Dr. Jonathan Vidal é especialista em cirurgia facial, com formação sólida e 
               atuação focada em resultados naturais e estruturados.
@@ -42,7 +45,7 @@ const AboutSection = () => {
             </p>
           </div>
 
-          <div className="flex gap-8 mt-10">
+          <div style={revealStyle(isVisible, 400)} className="flex gap-8 mt-10">
             {["Harmonia", "Naturalidade", "Precisão"].map((item) => (
               <div key={item} className="text-center">
                 <div className="w-12 h-[1px] gradient-gold mx-auto mb-3" />
