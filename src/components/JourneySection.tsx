@@ -1,4 +1,5 @@
 import { CheckCircle } from "lucide-react";
+import { useScrollReveal, revealStyle } from "@/hooks/useScrollReveal";
 
 const steps = [
   "Conversa inicial para entender sua história, expectativas e objetivos",
@@ -10,14 +11,16 @@ const steps = [
 ];
 
 const JourneySection = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
-    <section className="py-24 md:py-32 px-6">
+    <section ref={ref} className="py-24 md:py-32 px-6">
       <div className="max-w-4xl mx-auto">
-        <h2 className="font-serif text-3xl md:text-5xl text-center mb-4">
+        <h2 style={revealStyle(isVisible, 0)} className="font-serif text-3xl md:text-5xl text-center mb-4">
           Na Rinoplastia{" "}
           <span className="text-gold italic">cada detalhe importa</span>
         </h2>
-        <p className="text-muted-foreground text-center text-lg mb-16 max-w-2xl mx-auto">
+        <p style={revealStyle(isVisible, 100)} className="text-muted-foreground text-center text-lg mb-16 max-w-2xl mx-auto">
           Da primeira consulta ao pós operatório — clareza em cada etapa da sua jornada
         </p>
 
@@ -25,6 +28,7 @@ const JourneySection = () => {
           {steps.map((step, i) => (
             <div
               key={i}
+              style={revealStyle(isVisible, 150 + i * 80)}
               className="flex items-start gap-4 p-5 rounded-sm bg-card border border-border/50 hover:border-gold/30 transition-colors"
             >
               <CheckCircle className="w-5 h-5 text-gold mt-0.5 flex-shrink-0" />
@@ -33,7 +37,7 @@ const JourneySection = () => {
           ))}
         </div>
 
-        <p className="text-muted-foreground text-center mt-12 italic text-lg">
+        <p style={revealStyle(isVisible, 700)} className="text-muted-foreground text-center mt-12 italic text-lg">
           Cada etapa é conduzida com um olhar próximo e um cuidado realmente individual.
         </p>
       </div>

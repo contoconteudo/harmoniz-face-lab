@@ -1,4 +1,5 @@
 import { Stethoscope, ScanFace, Scissors, HeartPulse } from "lucide-react";
+import { useScrollReveal, revealStyle } from "@/hooks/useScrollReveal";
 
 const stages = [
   {
@@ -37,21 +38,24 @@ const stages = [
 ];
 
 const TechnologySection = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
-    <section className="py-24 md:py-32 px-6 bg-navy-light">
+    <section ref={ref} className="py-24 md:py-32 px-6 bg-navy-light">
       <div className="max-w-5xl mx-auto">
-        <h2 className="font-serif text-3xl md:text-5xl text-center mb-4">
+        <h2 style={revealStyle(isVisible, 0)} className="font-serif text-3xl md:text-5xl text-center mb-4">
           Tecnologia que aumenta a{" "}
           <span className="text-gold italic">segurança</span>
         </h2>
-        <p className="text-muted-foreground text-center text-lg mb-16 max-w-2xl mx-auto">
+        <p style={revealStyle(isVisible, 100)} className="text-muted-foreground text-center text-lg mb-16 max-w-2xl mx-auto">
           Tecnologia que aumenta a precisão. Segurança que permite resultados mais naturais.
         </p>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {stages.map((stage) => (
+          {stages.map((stage, i) => (
             <div
               key={stage.title}
+              style={revealStyle(isVisible, 200 + i * 100)}
               className="p-8 rounded-sm bg-card border border-border/50 hover:border-gold/20 transition-colors"
             >
               <div className="flex items-center gap-3 mb-6">
@@ -59,8 +63,8 @@ const TechnologySection = () => {
                 <h3 className="font-serif text-xl text-foreground">{stage.title}</h3>
               </div>
               <ul className="space-y-3">
-                {stage.items.map((item, i) => (
-                  <li key={i} className="text-muted-foreground text-sm leading-relaxed flex gap-2">
+                {stage.items.map((item, j) => (
+                  <li key={j} className="text-muted-foreground text-sm leading-relaxed flex gap-2">
                     <span className="text-gold mt-1">•</span>
                     {item}
                   </li>
