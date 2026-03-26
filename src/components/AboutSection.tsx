@@ -5,7 +5,7 @@ const AboutSection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 md:py-32 px-6 bg-navy-light">
+    <section ref={ref} className="py-24 md:py-32 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
         <div style={revealStyle(isVisible, 0)} className="relative">
           <img

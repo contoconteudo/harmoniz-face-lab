@@ -6,7 +6,7 @@ const SimulationSection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 md:py-32 px-6">
+    <section ref={ref} className="py-24 md:py-32 px-6 bg-navy-light">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
         <div>
           <h2 style={revealStyle(isVisible, 0)} className="font-serif text-3xl md:text-5xl mb-6 leading-tight">
