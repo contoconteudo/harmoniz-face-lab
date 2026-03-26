@@ -4,7 +4,7 @@ const CTASection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 md:py-32 px-6 bg-navy-light">
+    <section ref={ref} className="py-24 md:py-32 px-6">
       <div className="max-w-3xl mx-auto text-center">
         <h2 style={revealStyle(isVisible, 0)} className="font-serif text-3xl md:text-5xl mb-6">
           O próximo passo é{" "}

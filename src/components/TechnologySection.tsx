@@ -41,7 +41,7 @@ const TechnologySection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 md:py-32 px-6 bg-navy-light">
+    <section ref={ref} className="py-24 md:py-32 px-6">
       <div className="max-w-5xl mx-auto">
         <h2 style={revealStyle(isVisible, 0)} className="font-serif text-3xl md:text-5xl text-center mb-4">
           Tecnologia que aumenta a{" "}

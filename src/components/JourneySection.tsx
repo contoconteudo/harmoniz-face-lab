@@ -14,7 +14,7 @@ const JourneySection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 md:py-32 px-6">
+    <section ref={ref} className="py-24 md:py-32 px-6 bg-navy-light">
       <div className="max-w-4xl mx-auto">
         <h2 style={revealStyle(isVisible, 0)} className="font-serif text-3xl md:text-5xl text-center mb-4">
           Na Rinoplastia{" "}
