@@ -21,7 +21,7 @@ const JourneySection = () => {
           <span className="text-gold italic">cada detalhe importa</span>
         </h2>
         <p style={revealStyle(isVisible, 100)} className="text-muted-foreground text-center text-lg mb-16 max-w-2xl mx-auto">
-          Da primeira consulta ao pós operatório — clareza em cada etapa da sua jornada
+          Da primeira consulta ao pós operatório e clareza em cada etapa da sua jornada
         </p>
 
         <div className="space-y-6">

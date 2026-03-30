@@ -47,7 +47,7 @@ const AboutSection = () => {
           </div>
 
           <div style={revealStyle(isVisible, 400)} className="flex gap-8 mt-10">
-            {["Harmonia", "Naturalidade", "Precisão"].map((item) => (
+            {["Harmonia", "Naturalidade", "Precisão no resultado"].map((item) => (
               <div key={item} className="text-center">
                 <div className="w-12 h-[1px] gradient-gold mx-auto mb-3" />
                 <span className="text-gold text-sm font-medium tracking-wide">{item}</span>

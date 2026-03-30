@@ -33,7 +33,7 @@ const stages = [
   {
     icon: HeartPulse,
     title: "Pós Cirurgia",
-    items: ["Escaneamento 3D pós cirúrgico para acompanhamento da evolução"],
+    items: ["Escaneamento 3D pós cirúrgico"],
   },
 ];
 
