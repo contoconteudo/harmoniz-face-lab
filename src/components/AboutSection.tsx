@@ -30,17 +30,18 @@ const AboutSection = () => {
               atuação focada em resultados naturais e estruturados.
             </p>
             <p>
-              Graduado em Medicina pela Universidade Federal de Pernambuco (UFPE). Residência 
-              em Cirurgia Geral pelo IMIP-PE e Cirurgia Plástica no Hospital Agamenon Magalhães - PE.
+              Ele é graduado em Medicina pela Universidade Federal de Pernambuco (UFPE). 
+              Concluiu residência médica em Cirurgia Geral pelo IMIP-PE e residência em 
+              Cirurgia Plástica no Hospital Agamenon Magalhães - PE.
             </p>
             <p>
-              Membro titular da Sociedade Brasileira de Cirurgia Plástica, com título de 
-              especialista desde 2016. Especialização em Reconstrução Cirúrgica em Oncologia 
-              pelo Instituto Nacional de Câncer (INCA) e estágio internacional no MD Anderson 
-              Cancer Center, nos Estados Unidos.
+              É membro titular da Sociedade Brasileira de Cirurgia Plástica, com título de 
+              especialista desde 2016. Possui especialização em Reconstrução Cirúrgica em Oncologia 
+              pelo Instituto Nacional de Câncer (INCA) e realizou estágio internacional em 
+              Cirurgia Reconstrutora Oncológica no prestigiado MD Anderson Cancer Center, nos Estados Unidos.
             </p>
             <p>
-              Mestre em Ciências da Saúde pela UFPE. Fellow em Rinoplastia em vários estados 
+              É mestre em Ciências da Saúde pela UFPE. Fellow em Rinoplastia em vários estados 
               do Brasil, na Turquia e Bélgica.
             </p>
           </div>
