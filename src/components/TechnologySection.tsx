@@ -25,7 +25,7 @@ const stages = [
     title: "Durante a cirurgia",
     items: [
       "PRF (Plasma Rica em Fibrina) para otimizar a recuperação",
-      "Técnica ultrassônica (Piezzo), mais precisa e menos traumática",
+      "Técnica ultrassônica (Piezzo), mais precisa e menos traumática. O Piezo é uma tecnologia ultrassônica utilizada para cortar e esculpir o osso nasal com precisão sem o uso de força excessiva. Ele reduz traumas, inchaço e roxos, proporcionando uma recuperação mais rápida e confortável",
       "Uso de cartilagem do próprio paciente, respeitando a anatomia natural",
       "Execução guiada por molde 3D personalizado, maior precisão",
     ],
