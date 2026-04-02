@@ -32,7 +32,7 @@ const BeforeAfterCarousel = () => {
               key={`${item.id}-${index}`}
               className="flex-shrink-0 w-[300px] md:w-[400px]"
             >
-              <div className="aspect-[3/4] rounded-sm overflow-hidden">
+              <div className="aspect-video rounded-sm overflow-hidden">
                 <img
                   src={item.src}
                   alt={item.label}
