@@ -1,4 +1,4 @@
-import scanningImg from "@/assets/3d-scanning.jpg";
+import scanningImg from "@/assets/3d-scanning.webp";
 import { ShieldCheck } from "lucide-react";
 import { useScrollReveal, revealStyle } from "@/hooks/useScrollReveal";
 
@@ -49,9 +49,9 @@ const SimulationSection = () => {
           <img
             src={scanningImg}
             alt="Escaneamento facial 3D"
-            className="w-full rounded-sm glow-gold"
+            className="w-full aspect-square object-cover rounded-sm glow-gold"
             loading="lazy"
-            width={1200}
+            width={800}
             height={800}
           />
         </div>
