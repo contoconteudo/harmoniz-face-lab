@@ -1,4 +1,4 @@
-import doctorPortrait from "@/assets/doctor-portrait.jpg";
+import doctorPortrait from "@/assets/doctor-portrait.webp";
 import { useScrollReveal, revealStyle } from "@/hooks/useScrollReveal";
 
 const AboutSection = () => {
