@@ -1,4 +1,4 @@
-import scanningImg from "@/assets/3d-scanning.jpg";
+import scanningImg from "@/assets/3d-scanning.webp";
 import { ShieldCheck } from "lucide-react";
 import { useScrollReveal, revealStyle } from "@/hooks/useScrollReveal";
 
