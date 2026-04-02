@@ -1,4 +1,4 @@
-import heroFace from "@/assets/hero-face.jpg";
+import heroFace from "@/assets/hero-face.webp";
 import { useScrollReveal, revealStyle } from "@/hooks/useScrollReveal";
 import { ChevronDown } from "lucide-react";
 
@@ -15,6 +15,8 @@ const HeroSection = () => {
           className="w-full h-full object-cover opacity-40 scale-105"
           width={1920}
           height={1080}
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background" />
         {/* Overlay decorativo */}
