@@ -15,7 +15,7 @@ const BeforeAfterCarousel = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 md:py-32 overflow-hidden bg-navy-light">
+    <section ref={ref} className="py-16 md:py-20 overflow-hidden bg-navy-light">
       <div className="max-w-6xl mx-auto px-6 mb-12">
         <p style={revealStyle(isVisible, 0)} className="text-gold text-sm tracking-widest uppercase mb-3">
           Resultados reais
