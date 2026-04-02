@@ -87,3 +87,20 @@
     box-shadow: 0 0 30px hsl(24 90% 50% / 0.15);
   }
 }
+
+@keyframes carousel-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-carousel {
+  animation: carousel-scroll 30s linear infinite;
+}
+
+.animate-carousel:hover {
+  animation-play-state: paused;
+}
