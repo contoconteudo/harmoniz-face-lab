@@ -54,7 +54,7 @@ const Navbar = () => {
 
         {/* CTA Button */}
         <a
-          href="https://wa.me/5500000000000"
+          href="https://wa.me/5581992178724?text=estava%20no%20site%20e%20queria%20saber%20mais"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:inline-block btn-gold !px-5 !py-2.5"
@@ -90,7 +90,7 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="https://wa.me/5500000000000"
+            href="https://wa.me/5581992178724?text=estava%20no%20site%20e%20queria%20saber%20mais"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-gold text-center mt-2"

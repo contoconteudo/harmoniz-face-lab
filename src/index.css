@@ -147,12 +147,8 @@
   }
 }
 
-.animate-carousel {
-  animation: carousel-scroll 30s linear infinite;
-}
-
-.animate-carousel:hover {
-  animation-play-state: paused;
+.animate-carousel-scroll {
+  animation: carousel-scroll 60s linear infinite;
 }
 
 @keyframes float {

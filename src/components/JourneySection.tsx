@@ -51,11 +51,11 @@ const JourneySection = ({ id = "journey" }: { id?: string }) => {
           <p style={revealStyle(isVisible, 0)} className="text-gold text-sm tracking-widest uppercase mb-3">
             Sua jornada
           </p>
-          <h2 style={revealStyle(isVisible, 50)} className="font-serif text-3xl md:text-5xl text-center mb-4">
+          <h2 style={revealStyle(isVisible, 80)} className="font-serif text-3xl md:text-5xl text-center mb-4">
             Na Rinoplastia{" "}
             <span className="gradient-gold-text italic">cada detalhe importa</span>
           </h2>
-          <p style={revealStyle(isVisible, 100)} className="text-muted-foreground text-center text-lg max-w-2xl mx-auto">
+          <p style={revealStyle(isVisible, 160)} className="text-muted-foreground text-center text-lg max-w-2xl mx-auto">
             Da primeira consulta ao pós operatório, clareza em cada etapa do seu caminho
           </p>
         </div>
@@ -64,7 +64,7 @@ const JourneySection = ({ id = "journey" }: { id?: string }) => {
           {steps.map((step, i) => (
             <div
               key={i}
-              style={revealStyle(isVisible, 150 + i * 80)}
+              style={revealStyle(isVisible, 200 + i * 100)}
               className="group relative p-6 rounded-sm bg-card/50 border border-border/50 hover:border-gold/30 transition-all duration-500 hover:shadow-lg hover:shadow-gold/5 hover:-translate-y-1"
             >
               {/* Número decorativo */}
@@ -90,7 +90,7 @@ const JourneySection = ({ id = "journey" }: { id?: string }) => {
           ))}
         </div>
 
-        <p style={revealStyle(isVisible, 700)} className="text-muted-foreground text-center mt-16 italic text-lg relative">
+        <p style={revealStyle(isVisible, 800)} className="text-muted-foreground text-center mt-16 italic text-lg relative">
           <span className="inline-block px-8 py-4 rounded-sm bg-navy-light/50 border border-gold/10">
             Cada etapa é conduzida com um olhar próximo e um cuidado realmente individual.
           </span>

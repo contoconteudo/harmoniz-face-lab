@@ -23,25 +23,25 @@ const CTASection = () => {
           <span className="text-gold text-xs tracking-widest uppercase">Próximo passo</span>
         </div>
 
-        <h2 style={revealStyle(isVisible, 50)} className="font-serif text-3xl md:text-5xl mb-6 text-navy">
+        <h2 style={revealStyle(isVisible, 100)} className="font-serif text-3xl md:text-5xl mb-6 text-navy">
           O próximo passo é{" "}
           <span className="gradient-gold-text italic">simples</span>
         </h2>
-        <p style={revealStyle(isVisible, 150)} className="text-light-muted text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+        <p style={revealStyle(isVisible, 200)} className="text-light-muted text-lg mb-10 max-w-xl mx-auto leading-relaxed">
           A avaliação é o momento de tirar dúvidas, visualizar possibilidades
           e saber se faz sentido pra você.
         </p>
 
         {/* Divider decorativo */}
-        <div style={revealStyle(isVisible, 250)} className="flex items-center justify-center gap-4 mb-10">
+        <div style={revealStyle(isVisible, 300)} className="flex items-center justify-center gap-4 mb-10">
           <div className="w-16 h-px bg-gradient-to-r from-transparent to-gold/30" />
           <div className="w-2 h-2 rounded-full bg-gold/30" />
           <div className="w-16 h-px bg-gradient-to-l from-transparent to-gold/30" />
         </div>
 
-        <div style={revealStyle(isVisible, 300)}>
+        <div style={revealStyle(isVisible, 400)}>
           <a
-            href="https://wa.me/5500000000000"
+            href="https://wa.me/5581992178724?text=estava%20no%20site%20e%20queria%20saber%20mais"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-gold group inline-flex items-center gap-3"
@@ -51,7 +51,7 @@ const CTASection = () => {
           </a>
         </div>
 
-        <p style={revealStyle(isVisible, 400)} className="text-light-muted/60 text-sm mt-8">
+        <p style={revealStyle(isVisible, 500)} className="text-light-muted/60 text-sm mt-8">
           Sem compromisso. Uma conversa para entender seus objetivos.
         </p>
       </div>

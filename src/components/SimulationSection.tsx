@@ -12,24 +12,24 @@ const SimulationSection = () => {
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl" />
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center relative z-10">
-        <div>
-          <p style={revealStyle(isVisible, 0)} className="text-gold text-sm tracking-widest uppercase mb-3">
+        <div style={revealStyle(isVisible, 0)}>
+          <p className="text-gold text-sm tracking-widest uppercase mb-3">
             Tecnologia 3D
           </p>
-          <h2 style={revealStyle(isVisible, 50)} className="font-serif text-3xl md:text-5xl mb-6 leading-tight text-foreground">
+          <h2 style={revealStyle(isVisible, 80)} className="font-serif text-3xl md:text-5xl mb-6 leading-tight text-foreground">
             Mais do que imaginar, você pode{" "}
             <span className="gradient-gold-text italic">entender o seu resultado</span>
           </h2>
 
-          <p style={revealStyle(isVisible, 100)} className="text-muted-foreground text-lg mb-8 leading-relaxed">
+          <p style={revealStyle(isVisible, 160)} className="text-muted-foreground text-lg mb-8 leading-relaxed">
             Com a tecnologia de escaneamento facial em 2D e 3D, e a simulação virtual,
             conseguimos te mostrar possibilidades reais antes da cirurgia.
           </p>
 
-          <p style={revealStyle(isVisible, 200)} className="text-foreground/80 mb-6 font-medium">
+          <p style={revealStyle(isVisible, 240)} className="text-foreground/80 mb-6 font-medium">
             Isso traz mais segurança, porque:
           </p>
-          <ul style={revealStyle(isVisible, 250)} className="space-y-4 mb-10">
+          <ul style={revealStyle(isVisible, 280)} className="space-y-4 mb-10">
             {[
               "Reduz incertezas",
               "Ajuda na tomada de decisão",
@@ -44,9 +44,9 @@ const SimulationSection = () => {
             ))}
           </ul>
 
-          <div style={revealStyle(isVisible, 350)}>
+          <div style={revealStyle(isVisible, 380)}>
             <a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/5581992178724?text=estava%20no%20site%20e%20queria%20saber%20mais"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold inline-block"
@@ -57,7 +57,7 @@ const SimulationSection = () => {
         </div>
 
         {/* Imagem com efeitos */}
-        <div style={revealStyle(isVisible, 200)} className="relative group">
+        <div style={revealStyle(isVisible, 150)} className="relative group">
           {/* Anéis decorativos giratórios */}
           <div className="absolute -inset-4 rounded-full border border-gold/20 group-hover:border-gold/40 transition-colors duration-500" />
           <div className="absolute -inset-8 rounded-full border border-gold/10" />
@@ -79,7 +79,7 @@ const SimulationSection = () => {
           </div>
 
           {/* Badge flutuante */}
-          <div className="absolute -bottom-6 -left-6 glass px-6 py-4 rounded-sm border border-gold/20 glow-gold">
+          <div style={revealStyle(isVisible, 300)} className="absolute -bottom-6 -left-6 glass px-6 py-4 rounded-sm border border-gold/20 glow-gold">
             <p className="text-gold text-xs tracking-widest uppercase mb-1">Precisão</p>
             <p className="text-foreground font-serif text-lg">Milimétrica</p>
           </div>

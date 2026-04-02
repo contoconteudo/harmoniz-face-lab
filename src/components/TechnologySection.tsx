@@ -53,11 +53,11 @@ const TechnologySection = () => {
           <p style={revealStyle(isVisible, 0)} className="text-gold text-sm tracking-widest uppercase mb-3">
             Inovação
           </p>
-          <h2 style={revealStyle(isVisible, 50)} className="font-serif text-3xl md:text-5xl text-center mb-4">
+          <h2 style={revealStyle(isVisible, 80)} className="font-serif text-3xl md:text-5xl text-center mb-4">
             Tecnologia que aumenta a{" "}
             <span className="gradient-gold-text italic">segurança</span>
           </h2>
-          <p style={revealStyle(isVisible, 100)} className="text-muted-foreground text-center text-lg mb-4 max-w-2xl mx-auto">
+          <p style={revealStyle(isVisible, 160)} className="text-muted-foreground text-center text-lg mb-4 max-w-2xl mx-auto">
             Tecnologia que aumenta a precisão. Segurança que permite resultados mais naturais.
           </p>
         </div>
@@ -66,7 +66,7 @@ const TechnologySection = () => {
           {stages.map((stage, i) => (
             <div
               key={stage.title}
-              style={revealStyle(isVisible, 200 + i * 100)}
+              style={revealStyle(isVisible, 240 + i * 120)}
               className="group relative p-8 rounded-sm bg-card/50 border border-border/50 hover:border-gold/30 transition-all duration-500 hover:shadow-xl hover:shadow-gold/5 hover:-translate-y-1 overflow-hidden"
             >
               {/* Shimmer effect on hover */}
