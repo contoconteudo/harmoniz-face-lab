@@ -46,8 +46,8 @@ const LocationSection = () => {
           </div>
 
           <h2
-            style={revealStyle(isVisible, 100)}
-            className="font-serif text-3xl md:text-5xl text-navy"
+            style={{ ...revealStyle(isVisible, 100), color: "hsl(216, 28%, 7%)" }}
+            className="font-serif text-3xl md:text-5xl"
           >
             Nossas{" "}
             <span className="gradient-gold-text italic">clínicas</span>
