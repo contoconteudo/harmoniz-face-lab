@@ -1,9 +1,15 @@
 import { useScrollReveal, revealStyle } from "@/hooks/useScrollReveal";
+import beforeAfter1 from "@/assets/before-after-1.webp";
+import beforeAfter2 from "@/assets/before-after-2.webp";
+import beforeAfter3 from "@/assets/before-after-3.webp";
+import beforeAfter4 from "@/assets/before-after-4.webp";
 
-const placeholderItems = Array.from({ length: 8 }, (_, i) => ({
-  id: i + 1,
-  label: `Caso ${i + 1}`,
-}));
+const carouselItems = [
+  { id: 1, src: beforeAfter1, label: "Caso 1" },
+  { id: 2, src: beforeAfter2, label: "Caso 2" },
+  { id: 3, src: beforeAfter3, label: "Caso 3" },
+  { id: 4, src: beforeAfter4, label: "Caso 4" },
+];
 
 const BeforeAfterCarousel = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -20,15 +26,19 @@ const BeforeAfterCarousel = () => {
       </div>
 
       <div style={revealStyle(isVisible, 200)} className="relative">
-        {/* Double the items for seamless loop */}
         <div className="flex gap-6 animate-carousel">
-          {[...placeholderItems, ...placeholderItems].map((item, index) => (
+          {[...carouselItems, ...carouselItems].map((item, index) => (
             <div
               key={`${item.id}-${index}`}
               className="flex-shrink-0 w-[300px] md:w-[400px]"
             >
-              <div className="aspect-[3/4] rounded-sm bg-muted/20 border border-border/20 flex items-center justify-center">
-                <span className="text-muted-foreground text-sm">{item.label}</span>
+              <div className="aspect-[3/4] rounded-sm overflow-hidden">
+                <img
+                  src={item.src}
+                  alt={item.label}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </div>
           ))}
