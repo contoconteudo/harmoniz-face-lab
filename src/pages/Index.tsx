@@ -1,15 +1,17 @@
+import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import JourneySection from "@/components/JourneySection";
-import BeforeAfterCarousel from "@/components/BeforeAfterCarousel";
-import AboutSection from "@/components/AboutSection";
-import SimulationSection from "@/components/SimulationSection";
-import TechnologySection from "@/components/TechnologySection";
-import ProceduresSection from "@/components/ProceduresSection";
-import CTASection from "@/components/CTASection";
-import LocationSection from "@/components/LocationSection";
 import { Heart } from "lucide-react";
 import { useScrollReveal, revealStyle } from "@/hooks/useScrollReveal";
+
+const JourneySection = lazy(() => import("@/components/JourneySection"));
+const BeforeAfterCarousel = lazy(() => import("@/components/BeforeAfterCarousel"));
+const AboutSection = lazy(() => import("@/components/AboutSection"));
+const SimulationSection = lazy(() => import("@/components/SimulationSection"));
+const TechnologySection = lazy(() => import("@/components/TechnologySection"));
+const ProceduresSection = lazy(() => import("@/components/ProceduresSection"));
+const CTASection = lazy(() => import("@/components/CTASection"));
+const LocationSection = lazy(() => import("@/components/LocationSection"));
 
 const Index = () => {
   const { ref, isVisible } = useScrollReveal(0.1);
@@ -18,14 +20,16 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
-      <JourneySection id="journey" />
-      <BeforeAfterCarousel />
-      <AboutSection />
-      <SimulationSection />
-      <TechnologySection />
-      <ProceduresSection />
-      <LocationSection />
-      <CTASection />
+      <Suspense fallback={null}>
+        <JourneySection id="journey" />
+        <BeforeAfterCarousel />
+        <AboutSection />
+        <SimulationSection />
+        <TechnologySection />
+        <ProceduresSection />
+        <LocationSection />
+        <CTASection />
+      </Suspense>
       <footer ref={ref} className="py-12 px-6 relative overflow-hidden">
         {/* Elementos decorativos */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-gradient-to-b from-gold/30 to-transparent" />

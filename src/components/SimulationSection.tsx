@@ -1,4 +1,5 @@
 import scanningImg from "@/assets/3d-scanning.webp";
+import scanningImgSm from "@/assets/3d-scanning-sm.webp";
 import { ShieldCheck } from "lucide-react";
 import { useScrollReveal, revealStyle } from "@/hooks/useScrollReveal";
 
@@ -68,11 +69,13 @@ const SimulationSection = () => {
           <div className="relative overflow-hidden rounded-sm bg-light-surface border border-gold/10">
             <img
               src={scanningImg}
+              srcSet={`${scanningImgSm} 580w, ${scanningImg} 1616w`}
+              sizes="(max-width: 768px) 100vw, 576px"
               alt="Escaneamento facial 3D"
               className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
-              width={800}
-              height={800}
+              width={1616}
+              height={1080}
             />
             {/* Overlay com scan line */}
             <div className="absolute inset-0 bg-gradient-to-b from-gold/0 via-gold/10 to-gold/0 h-8 w-full animate-scan" />

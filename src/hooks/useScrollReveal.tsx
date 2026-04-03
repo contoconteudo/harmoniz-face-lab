@@ -34,7 +34,8 @@ export const revealClass = (isVisible: boolean, delay = 0) =>
 
 // Pre-defined delay style for dynamic delays (Tailwind can't handle dynamic delay classes)
 export const revealStyle = (isVisible: boolean, delay = 0): React.CSSProperties => ({
-  transition: `all 1s ease-out ${delay}ms`,
+  transition: `opacity 1s ease-out ${delay}ms, transform 1s ease-out ${delay}ms`,
   opacity: isVisible ? 1 : 0,
-  transform: isVisible ? "translateY(0)" : "translateY(32px)",
+  transform: isVisible ? "translateY(0px)" : "translateY(32px)",
+  willChange: isVisible ? "auto" : "opacity, transform",
 });

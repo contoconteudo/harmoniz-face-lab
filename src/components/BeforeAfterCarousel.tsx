@@ -6,12 +6,16 @@ import beforeAfter1 from "@/assets/before-after-1.webp";
 import beforeAfter2 from "@/assets/before-after-2.webp";
 import beforeAfter3 from "@/assets/before-after-3.webp";
 import beforeAfter4 from "@/assets/before-after-4.webp";
+import beforeAfter1Sm from "@/assets/before-after-1-sm.webp";
+import beforeAfter2Sm from "@/assets/before-after-2-sm.webp";
+import beforeAfter3Sm from "@/assets/before-after-3-sm.webp";
+import beforeAfter4Sm from "@/assets/before-after-4-sm.webp";
 
 const carouselItems = [
-  { id: 1, src: beforeAfter1, label: "Caso 1" },
-  { id: 2, src: beforeAfter2, label: "Caso 2" },
-  { id: 3, src: beforeAfter3, label: "Caso 3" },
-  { id: 4, src: beforeAfter4, label: "Caso 4" },
+  { id: 1, src: beforeAfter1, srcSm: beforeAfter1Sm, label: "Caso 1" },
+  { id: 2, src: beforeAfter2, srcSm: beforeAfter2Sm, label: "Caso 2" },
+  { id: 3, src: beforeAfter3, srcSm: beforeAfter3Sm, label: "Caso 3" },
+  { id: 4, src: beforeAfter4, srcSm: beforeAfter4Sm, label: "Caso 4" },
 ];
 
 const BeforeAfterCarousel = () => {
@@ -52,6 +56,8 @@ const BeforeAfterCarousel = () => {
                   <div className="aspect-video rounded-sm overflow-hidden border border-border/50 hover:border-gold/30 transition-colors duration-500">
                     <img
                       src={item.src}
+                      srcSet={`${item.srcSm} 580w, ${item.src} 960w`}
+                      sizes="(max-width: 640px) 320px, (max-width: 768px) 440px, 580px"
                       alt={item.label}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-105"
                       loading="lazy"

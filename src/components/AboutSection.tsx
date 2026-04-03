@@ -1,4 +1,5 @@
 import doctorPortrait from "@/assets/doctor-portrait.webp";
+import doctorPortraitSm from "@/assets/doctor-portrait-sm.webp";
 import { useScrollReveal, revealStyle } from "@/hooks/useScrollReveal";
 
 const AboutSection = () => {
@@ -18,6 +19,8 @@ const AboutSection = () => {
           <div className="relative overflow-hidden rounded-sm bg-light-surface">
             <img
               src={doctorPortrait}
+              srcSet={`${doctorPortraitSm} 650w, ${doctorPortrait} 800w`}
+              sizes="(max-width: 768px) 100vw, 650px"
               alt="Dr. Jonathan Vidal"
               className="w-full max-w-md mx-auto rounded-sm transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
