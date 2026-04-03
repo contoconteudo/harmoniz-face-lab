@@ -1,3 +1,6 @@
+/* Self-hosted fonts — served from /public/fonts/ via Netlify CDN */
+@import '/fonts/fonts.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -176,6 +179,23 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Hero section: pure CSS reveal — runs immediately on render, no JS dependency */
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-reveal {
+  animation: hero-reveal 0.9s ease-out both;
+  will-change: opacity, transform;
 }
 
 @keyframes scale-in {

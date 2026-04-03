@@ -14,11 +14,10 @@
   <meta property="og:description" content="Dr. Jonathan Vidal — Especialista em rinoplastia e cirurgia facial. Resultados naturais com tecnologia e precisão.">
   <meta name="twitter:description" content="Dr. Jonathan Vidal — Especialista em rinoplastia e cirurgia facial. Resultados naturais com tecnologia e precisão.">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Non-blocking async font load -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap"></noscript>
+  <!-- Self-hosted fonts: preload critical above-fold faces to prevent font CLS -->
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/playfair-display-400-normal-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/playfair-display-500-normal-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400-normal-latin.woff2" crossorigin>
   <!-- Critical CSS inline: prevents FOUC and makes LCP element visible before full CSS loads -->
   <style>
     *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid}
