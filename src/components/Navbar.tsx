@@ -6,6 +6,9 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    // Remove the static pre-rendered navbar from index.html now that React has taken over
+    document.getElementById("pre-nav")?.remove();
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };

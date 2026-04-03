@@ -19,12 +19,25 @@
   <!-- Non-blocking async font load -->
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap"></noscript>
+  <!-- Critical CSS inline: prevents FOUC and makes LCP element visible before full CSS loads -->
+  <style>
+    *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid}
+    body{margin:0;line-height:inherit;background-color:hsl(216,28%,7%);color:hsl(210,20%,92%);font-family:Inter,ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    #pre-nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+    #pre-nav a{font-family:'Playfair Display',Georgia,'Times New Roman',serif;font-size:1.125rem;line-height:1.75rem;color:hsl(210,20%,92%);text-decoration:none}
+    #pre-nav .pn-gold{color:hsl(24,90%,50%)}
+  </style>
   <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fff70a9c-01e1-4051-a19b-2ffa2960fbd4/id-preview-a51c4c32--ff542f0f-c7f3-4bd9-a8cc-0b02ffa34536.lovable.app-1774565257676.png">
   <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fff70a9c-01e1-4051-a19b-2ffa2960fbd4/id-preview-a51c4c32--ff542f0f-c7f3-4bd9-a8cc-0b02ffa34536.lovable.app-1774565257676.png">
   <meta name="twitter:card" content="summary_large_image">
 </head>
 
   <body>
+    <!-- Static pre-rendered navbar brand: visible immediately at HTML parse time (LCP element).
+         React removes this element once it mounts and renders the real Navbar. -->
+    <div id="pre-nav" aria-hidden="true">
+      <a href="#">Dr. Jonathan <span class="pn-gold">Vidal</span></a>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
