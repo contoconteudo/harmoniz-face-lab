@@ -1,3 +1,5 @@
+import scanningImg from "@/assets/3d-scanning.webp";
+import scanningImgSm from "@/assets/3d-scanning-sm.webp";
 import { useScrollReveal, revealStyle } from "@/hooks/useScrollReveal";
 
 const AboutSection = () => {
@@ -9,8 +11,33 @@ const AboutSection = () => {
       <div className="absolute top-1/4 -right-32 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 -left-32 w-64 h-64 bg-gold/5 rounded-full blur-3xl" />
 
-      <div className="max-w-4xl mx-auto relative z-10">
-        <div style={revealStyle(isVisible, 0)}>
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center relative z-10">
+
+        {/* Imagem */}
+        <div style={revealStyle(isVisible, 0)} className="relative group">
+          <div className="absolute inset-0 rounded-sm border border-gold/30 group-hover:border-gold/60 transition-colors duration-500" />
+          <div className="relative overflow-hidden rounded-sm bg-light-surface aspect-square">
+            <img
+              src={scanningImg}
+              srcSet={`${scanningImgSm} 580w, ${scanningImg} 1616w`}
+              sizes="(max-width: 768px) 100vw, 576px"
+              alt="Tecnologia 3D facial"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          </div>
+          {/* Badge decorativo */}
+          <div style={revealStyle(isVisible, 150)} className="absolute bottom-4 right-4 w-20 h-20 gradient-gold rounded-sm flex items-center justify-center shadow-lg">
+            <span className="text-primary-foreground text-center">
+              <span className="block text-xl font-serif">10+</span>
+              <span className="block text-[10px] uppercase tracking-wider">anos</span>
+            </span>
+          </div>
+        </div>
+
+        {/* Texto */}
+        <div style={revealStyle(isVisible, 100)}>
           <p className="text-gold text-sm tracking-widest uppercase mb-3">
             Quem é
           </p>
@@ -18,9 +45,9 @@ const AboutSection = () => {
             Dr. Jonathan Vidal
           </h2>
 
-          <div className="w-20 h-1 gradient-gold mb-8" style={revealStyle(isVisible, 80)} />
+          <div className="w-20 h-1 gradient-gold mb-8" style={revealStyle(isVisible, 180)} />
 
-          <div style={revealStyle(isVisible, 150)} className="space-y-5 text-light-muted leading-relaxed text-sm md:text-base">
+          <div style={revealStyle(isVisible, 250)} className="space-y-5 text-light-muted leading-relaxed text-sm md:text-base">
             <p className="border-l-2 border-gold/30 pl-4">
               O Dr. Jonathan Vidal é especialista em cirurgia facial, com formação sólida e
               atuação focada em resultados naturais e estruturados.
@@ -43,10 +70,10 @@ const AboutSection = () => {
           </div>
 
           {/* Pilares */}
-          <div style={revealStyle(isVisible, 350)} className="flex gap-10 mt-12 pt-8 border-t border-gold/20">
+          <div style={revealStyle(isVisible, 550)} className="flex gap-10 mt-12 pt-8 border-t border-gold/20">
             {["Harmonia", "Naturalidade", "Precisão"].map((item, i) => (
               <div key={item} className="text-center group">
-                <div className="w-16 h-px gradient-gold mx-auto mb-3 group-hover:h-1 transition-all duration-300" style={revealStyle(isVisible, 400 + i * 100)} />
+                <div className="w-16 h-px gradient-gold mx-auto mb-3 group-hover:h-1 transition-all duration-300" style={revealStyle(isVisible, 600 + i * 100)} />
                 <span className="text-gold text-sm font-medium tracking-widest uppercase">{item}</span>
               </div>
             ))}

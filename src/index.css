@@ -214,6 +214,22 @@
   will-change: transform;
 }
 
+@keyframes maps-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.97);
+  }
+}
+
+.animate-maps-pulse {
+  animation: maps-pulse 2.4s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
 .animate-shimmer {
   animation: shimmer 3s linear infinite;
   background: linear-gradient(90deg, transparent 0%, hsl(24 90% 50% / 0.15) 50%, transparent 100%);

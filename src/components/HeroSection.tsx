@@ -1,5 +1,5 @@
 import heroFace from "@/assets/hero-face.webp";
-import doctorPortrait from "@/assets/doctor-portrait.webp";
+import simulacaoImg from "@/assets/3dsimulacao.webp";
 import { ChevronDown } from "lucide-react";
 
 const HeroSection = () => {
@@ -77,13 +77,11 @@ const HeroSection = () => {
 
           <div className="relative overflow-hidden rounded-sm">
             <img
-              src={doctorPortrait}
-              alt="Dr. Jonathan Vidal"
-              className="w-full h-[600px] lg:h-[700px] object-cover object-top"
+              src={simulacaoImg}
+              alt="Simulação 3D facial"
+              className="w-full aspect-square object-cover"
               fetchPriority="high"
               decoding="async"
-              width={800}
-              height={1024}
             />
             {/* Overlay gradiente */}
             <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />

@@ -1,7 +1,7 @@
-import scanningImg from "@/assets/3d-scanning.webp";
-import scanningImgSm from "@/assets/3d-scanning-sm.webp";
 import { ShieldCheck } from "lucide-react";
 import { useScrollReveal, revealStyle } from "@/hooks/useScrollReveal";
+import drJonathanOp1 from "@/assets/jonathan-op1.webp";
+import drJonathanOp2 from "@/assets/jonathan-op2.webp";
 
 const SimulationSection = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -12,7 +12,9 @@ const SimulationSection = () => {
       <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl" />
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center relative z-10">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center relative z-10">
+
+        {/* ESQUERDA — Texto */}
         <div style={revealStyle(isVisible, 0)}>
           <p className="text-gold text-sm tracking-widest uppercase mb-3">
             Tecnologia 3D
@@ -26,6 +28,8 @@ const SimulationSection = () => {
             Com a tecnologia de escaneamento facial em 2D e 3D, e a simulação virtual,
             conseguimos te mostrar possibilidades reais antes da cirurgia.
           </p>
+
+          <div className="w-20 h-px gradient-gold mb-8" style={revealStyle(isVisible, 200)} />
 
           <p style={revealStyle(isVisible, 240)} className="text-foreground/80 mb-6 font-medium">
             Isso traz mais segurança, porque:
@@ -57,34 +61,56 @@ const SimulationSection = () => {
           </div>
         </div>
 
-        {/* Imagem com efeitos */}
-        <div style={revealStyle(isVisible, 150)} className="relative group">
-          {/* Anéis decorativos giratórios */}
-          <div className="absolute -inset-4 rounded-full border border-gold/20 group-hover:border-gold/40 transition-colors duration-500" />
-          <div className="absolute -inset-8 rounded-full border border-gold/10" />
+        {/* DIREITA — Mosaico */}
+        <div style={revealStyle(isVisible, 150)} className="relative">
+          {/* Grade assimétrica: coluna esquerda alta + coluna direita empilhada */}
+          <div className="grid grid-cols-2 grid-rows-[auto_auto] gap-3">
 
-          {/* Glow effect */}
-          <div className="absolute inset-0 bg-gold/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            {/* Imagem 01 — Dr. Jonathan em procedimento (destaque, alta) */}
+            <div className="row-span-2 relative overflow-hidden rounded-sm border border-gold/20 group">
+                <img
+                src={drJonathanOp1}
+                alt="Dr. Jonathan Vidal em procedimento cirúrgico"
+                className="w-full h-full min-h-[340px] object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+              {/* Overlay e cantos decorativos */}
+              <div className="absolute top-2 left-2 w-5 h-5 border-t border-l border-gold/40 group-hover:border-gold/70 transition-colors duration-300" />
+              <div className="absolute bottom-2 right-2 w-5 h-5 border-b border-r border-gold/40 group-hover:border-gold/70 transition-colors duration-300" />
+            </div>
 
-          <div className="relative overflow-hidden rounded-sm bg-light-surface border border-gold/10 aspect-square">
-            <img
-              src={scanningImg}
-              srcSet={`${scanningImgSm} 580w, ${scanningImg} 1616w`}
-              sizes="(max-width: 768px) 100vw, 576px"
-              alt="Escaneamento facial 3D"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              loading="lazy"
-            />
-            {/* Overlay com scan line */}
-            <div className="absolute inset-0 bg-gradient-to-b from-gold/0 via-gold/10 to-gold/0 h-8 w-full animate-scan" />
+            {/* Imagem 02 — Dr. Jonathan (destaque secundário) */}
+            <div className="relative overflow-hidden rounded-sm border border-gold/20 group">
+              <img
+                src={drJonathanOp2}
+                alt="Dr. Jonathan Vidal em procedimento cirúrgico"
+                className="w-full h-full min-h-[160px] object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="absolute top-2 left-2 w-4 h-4 border-t border-l border-gold/30 group-hover:border-gold/60 transition-colors duration-300" />
+              <div className="absolute bottom-2 right-2 w-4 h-4 border-b border-r border-gold/30 group-hover:border-gold/60 transition-colors duration-300" />
+            </div>
+
+            {/* Card de dado — preenche o espaço inferior direito */}
+            <div className="relative overflow-hidden rounded-sm border border-gold/15 bg-card/30">
+              <div className="h-full min-h-[160px] flex flex-col items-center justify-center gap-1 p-4">
+                <span className="font-serif text-4xl gradient-gold-text">10+</span>
+                <div className="w-8 h-px gradient-gold my-1" />
+                <span className="text-muted-foreground text-[10px] tracking-[0.2em] uppercase text-center">
+                  anos de<br />experiência
+                </span>
+              </div>
+              {/* Detalhe geométrico de canto */}
+              <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-gold/10" />
+              <div className="absolute bottom-0 left-0 w-12 h-12 border-b border-l border-gold/10" />
+            </div>
+
           </div>
 
-          {/* Badge flutuante */}
-          <div style={revealStyle(isVisible, 300)} className="absolute -bottom-6 -left-6 glass px-6 py-4 rounded-sm border border-gold/20 glow-gold">
-            <p className="text-gold text-xs tracking-widest uppercase mb-1">Precisão</p>
-            <p className="text-foreground font-serif text-lg">Milimétrica</p>
-          </div>
+          {/* Linha dourada decorativa lateral */}
+          <div className="absolute -left-6 top-8 bottom-8 w-px bg-gradient-to-b from-transparent via-gold/20 to-transparent hidden md:block" />
         </div>
+
       </div>
     </section>
   );

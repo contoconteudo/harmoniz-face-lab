@@ -1,5 +1,6 @@
 import { MapPin, Phone, Clock } from "lucide-react";
 import { useScrollReveal, revealStyle } from "@/hooks/useScrollReveal";
+import hallEntrada from "@/assets/hallentrada.webp";
 
 const clinics = [
   {
@@ -26,9 +27,18 @@ const LocationSection = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section ref={ref} className="py-24 md:py-32 px-6 relative overflow-hidden bg-light-bg">
-      {/* Fundo decorativo */}
-      <div className="absolute inset-0 bg-gradient-to-b from-light-surface to-light-bg" />
+    <section ref={ref} className="py-24 md:py-32 px-6 relative overflow-hidden">
+      {/* Imagem de fundo */}
+      <div className="absolute inset-0">
+        <img
+          src={hallEntrada}
+          alt=""
+          className="w-full h-full object-cover"
+          loading="lazy"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/80 to-background/90" />
+      </div>
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
       <div className="max-w-5xl mx-auto relative z-10">
@@ -63,7 +73,7 @@ const LocationSection = () => {
                 <p className="text-gold text-xs tracking-widest uppercase mb-1">{clinic.city}</p>
                 <h3 className="font-serif text-xl text-navy mb-6">{clinic.name}</h3>
 
-                <div className="space-y-4 text-sm text-light-muted">
+                <div className="space-y-4 text-sm text-black">
                   <div className="flex gap-3">
                     <MapPin className="w-4 h-4 text-gold/70 shrink-0 mt-0.5" />
                     <span className="whitespace-pre-line leading-relaxed">{clinic.address}</span>
@@ -78,7 +88,7 @@ const LocationSection = () => {
                       href="https://wa.me/5581992178724"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-gold transition-colors"
+                      className="text-black hover:text-gold transition-colors"
                     >
                       {clinic.phone}
                     </a>
@@ -89,7 +99,7 @@ const LocationSection = () => {
                   href={clinic.mapsHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-6 text-xs text-gold/70 hover:text-gold transition-colors"
+                  className="inline-flex items-center gap-2 mt-6 text-xs text-gold hover:text-gold/80 transition-colors animate-maps-pulse"
                 >
                   <MapPin className="w-3 h-3" />
                   Ver no Google Maps
