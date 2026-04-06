@@ -6,31 +6,37 @@ const steps = [
     num: "01",
     title: "Conversa inicial",
     desc: "para entender sua história, expectativas e objetivos",
+    image: null, // substituir pelo link da imagem
   },
   {
     num: "02",
     title: "Escaneamento facial",
     desc: "2D e 3D para análise detalhada",
+    image: null, // substituir pelo link da imagem
   },
   {
     num: "03",
     title: "Consulta personalizada",
     desc: "com o Dr. Jonathan",
+    image: null, // substituir pelo link da imagem
   },
   {
     num: "04",
     title: "Simulação e planejamento",
     desc: "cirúrgico individualizado",
+    image: null, // substituir pelo link da imagem
   },
   {
     num: "05",
     title: "Cirurgia",
     desc: "com técnica e precisão",
+    image: null,
   },
   {
     num: "06",
     title: "Acompanhamento",
     desc: "próximo e cuidadoso no pós operatório",
+    image: null,
   },
 ];
 
@@ -55,8 +61,9 @@ const JourneySection = ({ id = "journey" }: { id?: string }) => {
             Na Rinoplastia{" "}
             <span className="gradient-gold-text italic">cada detalhe importa</span>
           </h2>
-          <p style={revealStyle(isVisible, 160)} className="text-muted-foreground text-center text-lg max-w-2xl mx-auto">
-            Da primeira consulta ao pós operatório, clareza em cada etapa do seu caminho
+          <p style={revealStyle(isVisible, 160)} className="text-muted-foreground text-center text-lg max-w-2xl mx-auto text-balance">
+            Da primeira consulta ao pós-operatório,{" "}
+            <span className="text-foreground/80">clareza em cada etapa do seu caminho</span>
           </p>
         </div>
 
@@ -65,27 +72,41 @@ const JourneySection = ({ id = "journey" }: { id?: string }) => {
             <div
               key={i}
               style={revealStyle(isVisible, 200 + i * 100)}
-              className="group relative p-6 rounded-sm bg-card/50 border border-border/50 hover:border-gold/30 transition-all duration-500 hover:shadow-lg hover:shadow-gold/5 hover:-translate-y-1"
+              className="group relative rounded-sm bg-card/50 border border-border/50 hover:border-gold/30 transition-all duration-500 hover:shadow-lg hover:shadow-gold/5 hover:-translate-y-1 overflow-hidden"
             >
-              {/* Número decorativo */}
-              <span className="absolute -top-3 -right-3 text-6xl font-serif text-gold/10 group-hover:text-gold/20 transition-colors">
-                {step.num}
-              </span>
-
-              <div className="flex items-start gap-4 mb-3">
-                <div className="w-10 h-10 rounded-sm gradient-gold flex items-center justify-center flex-shrink-0">
-                  <CheckCircle className="w-5 h-5 text-primary-foreground" />
+              {/* Imagem da etapa */}
+              {step.image ? (
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={step.image}
+                    alt={step.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-card/80" />
                 </div>
-                <h3 className="font-serif text-xl text-foreground group-hover:text-gold transition-colors">
-                  {step.title}
-                </h3>
-              </div>
-              <p className="text-muted-foreground pl-14">{step.desc}</p>
+              ) : i < 4 ? (
+                <div className="relative h-40 overflow-hidden bg-navy-deep/50 flex items-center justify-center border-b border-border/30">
+                  <span className="text-muted-foreground/30 text-xs tracking-widest uppercase">imagem em breve</span>
+                </div>
+              ) : null}
 
-              {/* Linha conectora */}
-              {i < steps.length - 1 && (
-                <div className="hidden lg:block absolute left-1/2 top-full w-px h-6 bg-gradient-to-b from-gold/20 to-transparent" />
-              )}
+              <div className="p-6">
+                {/* Número decorativo */}
+                <span className="absolute top-2 right-3 text-5xl font-serif text-gold/10 group-hover:text-gold/20 transition-colors">
+                  {step.num}
+                </span>
+
+                <div className="flex items-start gap-4 mb-3">
+                  <div className="w-10 h-10 rounded-sm gradient-gold flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <h3 className="font-serif text-xl text-foreground group-hover:text-gold transition-colors">
+                    {step.title}
+                  </h3>
+                </div>
+                <p className="text-muted-foreground pl-14">{step.desc}</p>
+              </div>
             </div>
           ))}
         </div>

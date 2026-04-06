@@ -8,8 +8,6 @@ const clinics = [
     address: "Av. Agamenon Magalhães, 444\n14º Andar, Sala 906\nMaurício de Nassau, Caruaru – PE\nCEP 55012-290",
     hours: "Fecha às 18:00",
     phone: "(81) 99217-8724",
-    embedSrc:
-      "https://maps.google.com/maps?q=Av+Agamenon+Magalh%C3%A3es+444+Caruaru+PE+55012-290&output=embed&z=16",
     mapsHref:
       "https://www.google.com/maps/search/?api=1&query=Av+Agamenon+Magalh%C3%A3es+444+Caruaru+PE+55012-290",
   },
@@ -19,8 +17,6 @@ const clinics = [
     address: "Av. República do Líbano, 251\nSalas 2005 e 2006 – Torre 1\nPina, Recife – PE\nCEP 51110-131",
     hours: "Fecha às 17:00",
     phone: "(81) 99217-8724",
-    embedSrc:
-      "https://maps.google.com/maps?q=Av+Rep%C3%BAblica+do+L%C3%ADbano+251+Pina+Recife+PE+51110-131&output=embed&z=16",
     mapsHref:
       "https://www.google.com/maps/search/?api=1&query=Av+Rep%C3%BAblica+do+L%C3%ADbano+251+Pina+Recife+PE",
   },
@@ -62,38 +58,12 @@ const LocationSection = () => {
               style={revealStyle(isVisible, 200 + i * 150)}
               className="rounded-2xl overflow-hidden border border-gold/10 bg-white/70 shadow-sm"
             >
-              {/* Mapa clicável */}
-              <div className="relative h-56 group">
-                <iframe
-                  src={clinic.embedSrc}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0, pointerEvents: "none" }}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title={`Mapa ${clinic.city}`}
-                />
-                {/* Overlay transparente que captura o clique */}
-                <a
-                  href={clinic.mapsHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute inset-0 flex items-end justify-end p-3 opacity-0 group-hover:opacity-100 transition-opacity"
-                  aria-label={`Abrir ${clinic.city} no Google Maps`}
-                >
-                  <span className="bg-white/90 text-navy text-xs font-medium px-3 py-1.5 rounded-full shadow flex items-center gap-1.5">
-                    <MapPin className="w-3 h-3 text-gold" />
-                    Abrir no Maps
-                  </span>
-                </a>
-              </div>
-
               {/* Informações */}
-              <div className="p-6">
+              <div className="p-8">
                 <p className="text-gold text-xs tracking-widest uppercase mb-1">{clinic.city}</p>
-                <h3 className="font-serif text-xl text-navy mb-4">{clinic.name}</h3>
+                <h3 className="font-serif text-xl text-navy mb-6">{clinic.name}</h3>
 
-                <div className="space-y-3 text-sm text-light-muted">
+                <div className="space-y-4 text-sm text-light-muted">
                   <div className="flex gap-3">
                     <MapPin className="w-4 h-4 text-gold/70 shrink-0 mt-0.5" />
                     <span className="whitespace-pre-line leading-relaxed">{clinic.address}</span>
@@ -105,7 +75,7 @@ const LocationSection = () => {
                   <div className="flex gap-3 items-center">
                     <Phone className="w-4 h-4 text-gold/70 shrink-0" />
                     <a
-                      href={`https://wa.me/5581992178724`}
+                      href="https://wa.me/5581992178724"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-gold transition-colors"
@@ -114,6 +84,16 @@ const LocationSection = () => {
                     </a>
                   </div>
                 </div>
+
+                <a
+                  href={clinic.mapsHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-6 text-xs text-gold/70 hover:text-gold transition-colors"
+                >
+                  <MapPin className="w-3 h-3" />
+                  Ver no Google Maps
+                </a>
               </div>
             </div>
           ))}
