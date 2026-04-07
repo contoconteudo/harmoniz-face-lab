@@ -79,7 +79,7 @@ const HeroSection = () => {
             <img
               src={simulacaoImg}
               alt="Simulação 3D facial"
-              className="w-full aspect-square object-cover"
+              className="w-full aspect-square object-cover block"
               fetchPriority="high"
               decoding="async"
             />
