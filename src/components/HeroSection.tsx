@@ -75,11 +75,11 @@ const HeroSection = () => {
           <div className="absolute -inset-2 rounded-sm border border-gold/20" />
           <div className="absolute -inset-4 rounded-sm border border-gold/10" />
 
-          <div className="relative overflow-hidden rounded-sm">
+          <div className="relative overflow-hidden rounded-sm aspect-square">
             <img
               src={simulacaoImg}
               alt="Simulação 3D facial"
-              className="w-full aspect-square object-cover block"
+              className="w-full h-full object-cover block"
               fetchPriority="high"
               decoding="async"
             />
