@@ -4,19 +4,20 @@ import escaneamentoImg from "@/assets/escaneamento-facial.webp";
 import consultaImg from "@/assets/consulta-personalizada.webp";
 import simulacaoImg from "@/assets/simulacao-planejamento.webp";
 import cirurgiaImg from "@/assets/cirurgia.webp";
+import acompanhamentoImg from "@/assets/acompanhamento.webp";
 
 const steps = [
   {
     num: "01",
-    title: "Conversa inicial",
-    desc: "para entender sua história, expectativas e objetivos",
-    image: conversaInicialImg,
-  },
-  {
-    num: "02",
     title: "Escaneamento facial",
     desc: "2D e 3D para análise detalhada",
     image: escaneamentoImg,
+  },
+  {
+    num: "02",
+    title: "Conversa inicial",
+    desc: "para entender sua história, expectativas e objetivos",
+    image: conversaInicialImg,
   },
   {
     num: "03",
@@ -40,7 +41,7 @@ const steps = [
     num: "06",
     title: "Acompanhamento",
     desc: "próximo e cuidadoso no pós operatório",
-    image: null,
+    image: acompanhamentoImg,
   },
 ];
 
