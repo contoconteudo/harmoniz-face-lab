@@ -37,7 +37,7 @@ const LocationSection = () => {
           loading="lazy"
           aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/80 to-background/90" />
+        <div className="absolute inset-0 bg-black/90" />
       </div>
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
@@ -46,7 +46,7 @@ const LocationSection = () => {
         <div className="text-center mb-14">
           <div
             style={revealStyle(isVisible, 0)}
-            className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full border border-gold/20 bg-white/50"
+            className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full border border-gold/30"
           >
             <span className="text-white text-xs tracking-widest uppercase">Onde nos encontrar</span>
           </div>
@@ -63,17 +63,20 @@ const LocationSection = () => {
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {clinics.map((clinic, i) => (
-            <div
+            <a
               key={clinic.city}
+              href={clinic.mapsHref}
+              target="_blank"
+              rel="noopener noreferrer"
               style={revealStyle(isVisible, 200 + i * 150)}
-              className="rounded-2xl overflow-hidden border border-gold/10 bg-white/70 shadow-sm"
+              className="rounded-2xl overflow-hidden border border-gold/20 block cursor-pointer transition-all duration-300 hover:border-gold/50 hover:bg-white/5 hover:scale-[1.02] hover:shadow-lg hover:shadow-gold/10 active:scale-[0.99]"
             >
               {/* Informações */}
               <div className="p-8">
                 <p className="text-gold text-xs tracking-widest uppercase mb-1">{clinic.city}</p>
-                <h3 className="font-serif text-xl text-navy mb-6">{clinic.name}</h3>
+                <h3 className="font-serif text-xl text-white mb-6">{clinic.name}</h3>
 
-                <div className="space-y-4 text-sm text-black">
+                <div className="space-y-4 text-sm text-white/90">
                   <div className="flex gap-3">
                     <MapPin className="w-4 h-4 text-gold/70 shrink-0 mt-0.5" />
                     <span className="whitespace-pre-line leading-relaxed">{clinic.address}</span>
@@ -84,28 +87,16 @@ const LocationSection = () => {
                   </div>
                   <div className="flex gap-3 items-center">
                     <Phone className="w-4 h-4 text-gold/70 shrink-0" />
-                    <a
-                      href="https://wa.me/5581992178724"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-black hover:text-gold transition-colors"
-                    >
-                      {clinic.phone}
-                    </a>
+                    <span className="text-white/90">{clinic.phone}</span>
                   </div>
                 </div>
 
-                <a
-                  href={clinic.mapsHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-6 text-xs text-gold hover:text-gold/80 transition-colors animate-maps-pulse"
-                >
+                <div className="inline-flex items-center gap-2 mt-6 text-xs text-gold animate-maps-pulse">
                   <MapPin className="w-3 h-3" />
                   Ver no Google Maps
-                </a>
+                </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

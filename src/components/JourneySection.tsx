@@ -1,8 +1,8 @@
 import { useScrollReveal, revealStyle } from "@/hooks/useScrollReveal";
 import conversaInicialImg from "@/assets/3d-scanning-sm.webp";
-import escaneamentoImg from "@/assets/scan3d.webp";
-import consultaImg from "@/assets/joanathanclose.webp";
-import simulacaoImg from "@/assets/molde.webp";
+import escaneamentoImg from "@/assets/escaneamento-facial.webp";
+import consultaImg from "@/assets/consulta-personalizada.webp";
+import simulacaoImg from "@/assets/simulacao-planejamento.webp";
 import cirurgiaImg from "@/assets/cirurgia.webp";
 
 const steps = [

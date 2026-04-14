@@ -1,4 +1,3 @@
-import heroFace from "@/assets/hero-face.webp";
 import simulacaoImg from "@/assets/3dsimulacao.webp";
 import { ChevronDown } from "lucide-react";
 
@@ -55,7 +54,7 @@ const HeroSection = () => {
             style={{ animationDelay: '600ms' }}
           >
             <a
-              href="https://wa.me/5581992178724?text=estava%20no%20site%20e%20queria%20saber%20mais"
+              href="https://wa.me/5581992178724?text=Ol%C3%A1%21%20Vi%20o%20an%C3%BAncio%20e%20fiquei%20interessado%28a%29%20em%20saber%20mais%20detalhes%20para%20realizar%20meu%20sonho%20%F0%9F%98%8A"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold group relative overflow-hidden inline-flex"
@@ -88,10 +87,6 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-background/20" />
           </div>
 
-          {/* Badge decorativo */}
-          <div className="absolute bottom-6 left-6 px-4 py-3 glass-light border border-gold/30 rounded-sm">
-            <span className="text-gold text-xs tracking-widest uppercase">10+ anos de experiência</span>
-          </div>
         </div>
       </div>
 

@@ -1,5 +1,4 @@
-import scanningImg from "@/assets/3d-scanning.webp";
-import scanningImgSm from "@/assets/3d-scanning-sm.webp";
+import doctorPortrait from "@/assets/doctor-portrait-new.webp";
 import { useScrollReveal, revealStyle } from "@/hooks/useScrollReveal";
 
 const AboutSection = () => {
@@ -18,11 +17,10 @@ const AboutSection = () => {
           <div className="absolute inset-0 rounded-sm border border-gold/30 group-hover:border-gold/60 transition-colors duration-500" />
           <div className="relative overflow-hidden rounded-sm bg-light-surface aspect-square">
             <img
-              src={scanningImg}
-              srcSet={`${scanningImgSm} 580w, ${scanningImg} 1616w`}
-              sizes="(max-width: 768px) 100vw, 576px"
-              alt="Tecnologia 3D facial"
+              src={doctorPortrait}
+              alt="Dr. Jonathan Vidal"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              style={{ objectPosition: "50% 28%" }}
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
